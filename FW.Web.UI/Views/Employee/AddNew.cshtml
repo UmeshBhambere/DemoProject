@@ -1,0 +1,43 @@
+﻿@{
+    ViewBag.Title = "AddNew";
+}
+
+<h2>Add New Employee</h2>
+<script src="~/Scripts/jquery-1.8.3.min.js"></script>
+<script src="~/Scripts/jquery.validate.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+
+<script src="~/Scripts/AppScripts/SaveEmployee.js"></script>
+
+@using(Html.BeginForm("SaveEmployee","Employee",FormMethod.Post))
+{
+    <table>
+        <tr>
+            <td>FirstName</td>
+            <td colspan="2">@Html.TextBox("FirstName")</td>
+            <td>@Html.ValidationMessage("FirstName")</td>
+        </tr>
+        <tr>    
+            <td>Last Name</td>
+            <td colspan="2">@Html.TextBox("LastName")</td>
+            <td>@Html.ValidationMessage("LastName")</td>
+        </tr>
+        <tr>    
+            <td>Salary</td>
+            <td colspan="2">@Html.TextBox("Salary")</td>
+            <td>@Html.ValidationMessage("Salary")</td>
+        </tr>
+        <tr>  
+            <td></td>
+            <td>
+                <input type="Submit" name="btnSubmit" value="Save Employee" /></td>
+            <td>
+                <input type="button" name="btnReset" value="Reset" id="btnReset" /></td>
+        </tr>
+
+    </table>
+    
+    <br />
+    
+    <a href="/Employee/Index">go back</a>
+}

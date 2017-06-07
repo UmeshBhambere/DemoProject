@@ -1,0 +1,28 @@
+﻿@model FW.Web.UI.ViewModels.ListEmployeeViewModel
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Employee Details</h2>
+
+
+
+<a href="/Employee/AddNew">Add New Employee</a>
+
+<br />  
+<br />
+
+<table border="1" cellspacing="2">
+    <tr>
+        <th>Employee Name</th>
+        <th>Salary</th>
+    </tr>
+    @foreach (var e in Model.ListEmployee)
+    {
+        <tr style="background-color:@e.SalaryColor;color:#FFF">
+            <td>@e.EmployeeName</td>
+            <td>@e.Salary</td>
+        </tr> 
+    }
+</table>
